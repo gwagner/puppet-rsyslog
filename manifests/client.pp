@@ -49,7 +49,7 @@ class rsyslog::client (
     $content_real = template("${module_name}/client.conf.erb")
   }
 
-    $console = hiera('rsyslog::console', 'xconsole');
+    $console = hiera('rsyslog::client::console', 'xconsole');
 
   rsyslog::snippet { $rsyslog::client_conf:
     ensure  => present,
